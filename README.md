@@ -14,4 +14,30 @@ Expected Outcomes:
 2. Data Cleaning & Transformation: Identify duplicates and remove. If required then change records with missing or null values.
 3. Exploratory Data Analysis (EDA): Perform basic exploratory data analysis to understand the dataset and evaluate the correlations within the dataset.
 4. Data Analysis: Leverage SQL analytics to extract actionable insights and answer critical business questions from sales performance data.
- 
+
+1. Creating & Setting up Database
+•	Database Creation: Project initialization begins with the creation of the retail_sales_db database.
+•	Table Creation: The retail_sales_data_analysis table stores transactional sales records. The schema consists of the following attributes: transaction_id, sale_date, sale_time, customer_id, gender, age, product_group, quantity (Qty of goods sold), price_per_unit, cogs (cost of good sold), and total_sale.
+
+CREATE TABLE Retail_Sales (
+transactions_id INT PRIMARY KEY,
+sale_date DATE,
+sale_time TIMESTAMP,
+customer_id INT,
+gender VARCHAR(15),
+age INT,
+product_group VARCHAR(20),
+quantiy INT,
+price_per_unit FLOAT,
+cogs FLOAT,
+total_sale FLOAT
+);
+
+2. Data Cleaning & Data Transformation 
+• Total Records: Count all rows in the dataset.
+• Product Groups: List all distinct product groups.
+• Unique Customers: Find the number of distinct customer.
+• Missing Data: Remove any rows containing null or empty values.
+
+
+
