@@ -19,6 +19,7 @@ Expected Outcomes:
 •	Database Creation: Project initialization begins with the creation of the retail_sales_db database.
 •	Table Creation: The retail_sales_data_analysis table stores transactional sales records. The schema consists of the following attributes: transaction_id, sale_date, sale_time, customer_id, gender, age, product_group, quantity (Qty of goods sold), price_per_unit, cogs (cost of good sold), and total_sale.
 
+Query:
 CREATE TABLE Retail_Sales (
 transactions_id INT PRIMARY KEY,
 sale_date DATE,
@@ -35,9 +36,40 @@ total_sale FLOAT
 
 2. Data Cleaning & Data Transformation 
 • Total Records: Count all rows in the dataset.
+Query:
+SELECT COUNT(*) FROM retail_sales_data_analysis;
+Output:
+2000
+
 • Product Groups: List all distinct product groups.
+Query:
+SELECT DISTINCT category FROM retail_sales_data_analysis;
+Output:
+1 Beauty
+2 Clothing
+3 Electronics
+
 • Unique Customers: Find the number of distinct customer.
+Query:
+SELECT COUNT(DISTINCT customer_id) FROM retail_sales_data_analysis;
+Output:
+155
+
 • Missing Data: Remove any rows containing null or empty values.
+Query:
+SELECT * FROM retail_sales_data_analysis
+WHERE 
+    sale_date IS NULL OR sale_time IS NULL OR customer_id IS NULL OR 
+    gender IS NULL OR age IS NULL OR category IS NULL OR 
+    quantity IS NULL OR price_per_unit IS NULL OR cogs IS NULL;
+
+DELETE FROM retail_sales
+WHERE 
+    sale_date IS NULL OR sale_time IS NULL OR customer_id IS NULL OR 
+    gender IS NULL OR age IS NULL OR category IS NULL OR 
+    quantity IS NULL OR price_per_unit IS NULL OR cogs IS NULL;
+
+
 
 
 
