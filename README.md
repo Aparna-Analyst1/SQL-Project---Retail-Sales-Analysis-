@@ -50,27 +50,40 @@ total_sale FLOAT
 );
 
 
-3. Data Cleaning & Data Transformation 
+3. Data Cleaning & Data Transformation
+   
 • Total Records: Count all rows in the dataset.
 Query:
+
 SELECT COUNT(*) FROM retail_sales_data_analysis;
+
 Output:
+
 2000
 
 • Product Groups: List all distinct product groups.
+
 Query:
+
 SELECT DISTINCT category FROM retail_sales_data_analysis;
+
 Output:
+
 1 Beauty
+
 2 Clothing
+
 3 Electronics
 
 • Unique Customers: Find the number of distinct customer.
-Query:
-SELECT COUNT(DISTINCT customer_id) FROM retail_sales_data_analysis;
-Output:
-155
 
+Query:
+
+SELECT COUNT(DISTINCT customer_id) FROM retail_sales_data_analysis;
+
+Output:
+
+155
 • Missing Data: Remove any rows containing null or empty values.
 Query:
 SELECT * FROM retail_sales_data_analysis
