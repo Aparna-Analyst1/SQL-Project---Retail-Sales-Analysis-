@@ -70,7 +70,9 @@ SELECT DISTINCT category FROM retail_sales_data_analysis;
 Output:
 
 1 Beauty
+
 2 Clothing
+
 3 Electronics
 
 • Unique Customers: Find the number of distinct customer.
