@@ -23,7 +23,8 @@ Expected Outcomes:
 
 Query:
 
-CREATE TABLE Retail_Sales (
+CREATE TABLE Retail_Sales 
+(
 
 transactions_id INT PRIMARY KEY,
 
@@ -96,19 +97,19 @@ SELECT * FROM retail_sales_data_analysis
 WHERE 
     
     sale_date IS NULL OR sale_time IS NULL OR customer_id IS NULL OR 
-    gender IS NULL OR age IS NULL OR category IS NULL OR 
+    gender IS NULL OR age IS NULL OR product_group IS NULL OR 
     quantity IS NULL OR price_per_unit IS NULL OR cogs IS NULL;
 
 
-DELETE FROM retail_sales
+DELETE FROM retail_sales_data_analysis
 
 WHERE 
     
     sale_date IS NULL OR sale_time IS NULL OR customer_id IS NULL OR 
-    gender IS NULL OR age IS NULL OR category IS NULL OR 
+    gender IS NULL OR age IS NULL OR product_group IS NULL OR 
     quantity IS NULL OR price_per_unit IS NULL OR cogs IS NULL;
 
+Note: Skipped null checks for transaction_id due to its Primary Key (non-nullable) constraint. 
 
-
-
+Data cleaning is complete; dataset is ready for exploratory data analysis (EDA) and modeling.
 
