@@ -61,6 +61,7 @@ Output:
 
 2000
 
+
 • Product Groups: List all distinct product groups.
 
 Query:
@@ -75,6 +76,7 @@ Output:
 
 3 Electronics
 
+
 • Unique Customers: Find the number of distinct customer.
 
 Query:
@@ -84,16 +86,24 @@ SELECT COUNT(DISTINCT customer_id) FROM retail_sales_data_analysis;
 Output:
 
 155
+
 • Missing Data: Remove any rows containing null or empty values.
+
 Query:
+
 SELECT * FROM retail_sales_data_analysis
+
 WHERE 
+    
     sale_date IS NULL OR sale_time IS NULL OR customer_id IS NULL OR 
     gender IS NULL OR age IS NULL OR category IS NULL OR 
     quantity IS NULL OR price_per_unit IS NULL OR cogs IS NULL;
 
+
 DELETE FROM retail_sales
+
 WHERE 
+    
     sale_date IS NULL OR sale_time IS NULL OR customer_id IS NULL OR 
     gender IS NULL OR age IS NULL OR category IS NULL OR 
     quantity IS NULL OR price_per_unit IS NULL OR cogs IS NULL;
