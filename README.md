@@ -18,7 +18,6 @@ Expected Outcomes:
 1. Creating & Setting up Database
 •	Database Creation: Project initialization begins with the creation of the retail_sales_db database.
 •	Table Creation: The retail_sales_data_analysis table stores transactional sales records. The schema consists of the following attributes: transaction_id, sale_date, sale_time, customer_id, gender, age, product_group, quantity (Qty of goods sold), price_per_unit, cogs (cost of good sold), and total_sale.
-
 Query:
 CREATE TABLE Retail_Sales (
 transactions_id INT PRIMARY KEY,
