@@ -113,3 +113,16 @@ Note: Skipped null checks for transaction_id due to its Primary Key (non-nullabl
 
 Data cleaning is complete; dataset is ready for exploratory data analysis (EDA) and modeling.
 
+3. Data Analysis & Findings
+The following SQL queries were developed to answer specific business questions:
+
+Command: Retrieve all columns for sales made in the month of "June":
+
+Query: 
+SELECT *
+FROM retail_sales_data_analysis
+WHERE sale_date >= '2023-06-01'
+AND sale_date < '2023-07-01';
+
+  
+
