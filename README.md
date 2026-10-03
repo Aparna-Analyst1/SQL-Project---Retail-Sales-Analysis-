@@ -130,6 +130,38 @@ SELECT
     SUM(CASE WHEN total_sale IS NULL THEN 1 ELSE 0 END) AS missing_sales
 FROM retail_sales;
 
+5. Check duplicate transactions
+SELECT
+    transactions_id,
+    COUNT(*) AS transaction_count
+FROM retail_sales
+GROUP BY transactions_id
+HAVING COUNT(*) > 1;
+
+6. Check invalid values
+SELECT *
+FROM retail_sales
+WHERE quantiy <= 0
+   OR price_per_unit <= 0
+   OR cogs < 0
+   OR total_sale <= 0;
+If this returns no rows, there are no duplicate transaction IDs.
+
+7. Validate sales calculation
+
+This is a very good data-validation query for your project.
+
+SELECT *
+FROM retail_sales
+WHERE quantiy IS NOT NULL
+  AND price_per_unit IS NOT NULL
+  AND total_sale IS NOT NULL
+  AND total_sale <> quantiy * price_per_unit;
+
+This checks whether:
+
+Quantity × Price Per Unit = Total Sale
+
 Note: Skipped null checks for transaction_id due to its Primary Key (non-nullable) constraint. 
 
 Data cleaning is complete; dataset is ready for exploratory data analysis (EDA) and modeling.
