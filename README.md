@@ -15,7 +15,7 @@ Expected Outcomes:
 3. Exploratory Data Analysis (EDA): Perform basic exploratory data analysis to understand the dataset and evaluate the correlations within the dataset.
 4. Data Analysis: Leverage SQL analytics to extract actionable insights and answer critical business questions from sales performance data.
 
-1.	Creating & Setting up Database
+1.	Database Setup
    
 •	Database Creation: Project initialization begins with the creation of the retail_sales_db database.
 
@@ -116,7 +116,7 @@ Data cleaning is complete; dataset is ready for exploratory data analysis (EDA) 
 3. Data Analysis & Findings
 The following SQL queries were developed to answer specific business questions:
 
-Command: Retrieve all columns for sales made in the month of "June":
+1: Retrieve all columns for sales made in the month of "June":
 
 Query: 
 
@@ -128,5 +128,5 @@ WHERE sale_date >= '2023-06-01'
 
 AND sale_date < '2023-07-01';
 
-  
+2: Retrieve all columns for sales made in the month of "June":
 
