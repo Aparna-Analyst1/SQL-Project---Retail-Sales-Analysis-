@@ -53,21 +53,25 @@ total_sale FLOAT
 
 3. Data Cleaning & Data Transformation
    
-• Total Records: Count all rows in the dataset.
+1 Total Records: Count all rows in the dataset.
 Query:
 
-SELECT COUNT(*) FROM retail_sales_data_analysis;
+SELECT COUNT(*)  AS total_transactions 
+
+FROM retail_sales_data_analysis;
 
 Output:
 
 2000
 
 
-• Product Groups: List all distinct product groups.
+2 Product Groups: List all distinct product groups.
 
 Query:
 
-SELECT DISTINCT category FROM retail_sales_data_analysis;
+SELECT DISTINCT product groups AS different_groups_of_product
+
+FROM retail_sales_data_analysis;
 
 Output:
 
@@ -78,17 +82,19 @@ Output:
 3 Electronics
 
 
-• Unique Customers: Find the number of distinct customer.
+3 Unique Customers: Find the total number of customer.
 
 Query:
 
-SELECT COUNT(DISTINCT customer_id) FROM retail_sales_data_analysis;
+SELECT COUNT(DISTINCT customer_id) AS total_number_of_customer
+
+FROM retail_sales_data_analysis;
 
 Output:
 
 155
 
-• Missing Data: Remove any rows containing null or empty values.
+4 Checking Missing Data: Remove any rows containing null or empty values.
 
 Query:
 
@@ -108,6 +114,21 @@ WHERE
     sale_date IS NULL OR sale_time IS NULL OR customer_id IS NULL OR 
     gender IS NULL OR age IS NULL OR product_group IS NULL OR 
     quantity IS NULL OR price_per_unit IS NULL OR cogs IS NULL;
+
+OR
+SELECT
+    SUM(CASE WHEN transactions_id IS NULL THEN 1 ELSE 0 END) AS missing_transaction_id,
+    SUM(CASE WHEN sale_date IS NULL THEN 1 ELSE 0 END) AS missing_sale_date,
+    SUM(CASE WHEN sale_time IS NULL THEN 1 ELSE 0 END) AS missing_sale_time,
+    SUM(CASE WHEN customer_id IS NULL THEN 1 ELSE 0 END) AS missing_customer_id,
+    SUM(CASE WHEN gender IS NULL THEN 1 ELSE 0 END) AS missing_gender,
+    SUM(CASE WHEN age IS NULL THEN 1 ELSE 0 END) AS missing_age,
+    SUM(CASE WHEN category IS NULL THEN 1 ELSE 0 END) AS missing_category,
+    SUM(CASE WHEN quantiy IS NULL THEN 1 ELSE 0 END) AS missing_quantity,
+    SUM(CASE WHEN price_per_unit IS NULL THEN 1 ELSE 0 END) AS missing_price,
+    SUM(CASE WHEN cogs IS NULL THEN 1 ELSE 0 END) AS missing_cogs,
+    SUM(CASE WHEN total_sale IS NULL THEN 1 ELSE 0 END) AS missing_sales
+FROM retail_sales;
 
 Note: Skipped null checks for transaction_id due to its Primary Key (non-nullable) constraint. 
 
